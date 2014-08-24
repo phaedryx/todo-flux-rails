@@ -3,7 +3,7 @@ var browserify = require('gulp-browserify');
 var rename     = require('gulp-rename');
 
 gulp.task('browserify', function() {
-  gulp.src('javascript_src/app.js')
+  gulp.src('app/assets/javascripts/src/app.js')
     .pipe(browserify({transform: 'cjsxify'}))
     .pipe(rename('bundle.js'))
     .pipe(gulp.dest('app/assets/javascripts/'));
