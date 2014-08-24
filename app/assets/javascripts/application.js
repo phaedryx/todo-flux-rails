@@ -13,3 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bundle
+
+React.renderComponent(Hello({name: "John"}), document.getElementById('hello'));
