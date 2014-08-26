@@ -29,21 +29,18 @@ TodoStore = merge(EventEmitter.prototype,
   dispatcherIndex: AppDispatcher.register((payload) ->
     action = payload.action
 
-    switch(action.actionType)
-      case TodoConstants.TODO_CREATE:
+    switch action.actionType
+      when TodoConstants.TODO_CREATE
         text = action.text.trim()
-        if (text !== '')
+        if (text isnt '')
           create(text)
           TodoStore.emitChange()
-        break
-      case TodoConstants.TODO_DESTROY:
+      when TodoConstants.TODO_DESTROY
         destroy(action.id)
         TodoStore.emitChange()
-        break
 
     true
   )
-
 )
 
 module.exports = TodoStore
