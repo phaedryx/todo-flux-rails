@@ -1,2 +1,2 @@
 window.React = require('react');
-window.Hello = require('./components/Hello.coffee');
+window.keyMirror = require('react/lib/keyMirror')
