@@ -53,15 +53,13 @@ Dispatcher.prototype.waitFor = function(ids) {
 };
 
 Dispatcher.prototype.dispatch = function(payload) {
-  var dispatch_message, id, _i, _len, _ref, _results;
+  var dispatch_message, id, _results;
   dispatch_message = 'Dispatch.dispatch(...): Cannot dispatch in the middle of a dispatch.';
   invariant(!this.$Dispatcher_isDispatching, dispatch_message);
   this.$Dispatcher_startDispatching(payload);
   try {
-    _ref = this.$Dispatcher_callbacks;
     _results = [];
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      id = _ref[_i];
+    for (id in this.$Dispatcher_callbacks) {
       if (this.$Dispatcher_isPending[id]) {
         continue;
       }
@@ -84,10 +82,8 @@ Dispatcher.prototype.$Dispatcher_invokeCallback = function(id) {
 };
 
 Dispatcher.prototype.$Dispatcher_startDispatching = function(payload) {
-  var id, _i, _len, _ref;
-  _ref = this.$Dispatcher_callbacks;
-  for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-    id = _ref[_i];
+  var id;
+  for (id in this.$Dispatcher_callbacks) {
     this.$Dispatcher_isPending[id] = false;
     this.$Dispatcher_isHandled[id] = false;
   }
