@@ -22,13 +22,15 @@ TodoApp = React.createClass(
   componentWillMount: -> TodoStore.removeChangeListener(@_onChange)
 
   render: ->
-    <div>
-      <Header />
-      <MainSection
-        allTodos={@state.allTodos}
-        areAllComplete={@state.areAllComplete}
-      />
-      <Footer allTodos={@state.allTodos} />
+    <div className="row">
+      <div className="small-6 large-centered columns">
+        <Header />
+        <MainSection
+          allTodos={@state.allTodos}
+          areAllComplete={@state.areAllComplete}
+        />
+        <Footer allTodos={@state.allTodos} />
+      </div>
     </div>
 )
 

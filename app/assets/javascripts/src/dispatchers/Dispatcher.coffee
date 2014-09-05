@@ -4,7 +4,7 @@ _lastID = 1
 _prefix = 'ID_'
 
 Dispatcher = ->
-  @$Dispacther_callbacks = {}
+  @$Dispatcher_callbacks = {}
   @$Dispatcher_isPending = {}
   @$Dispatcher_isHandled = {}
   @$Dispatcher_isDispatching  = false

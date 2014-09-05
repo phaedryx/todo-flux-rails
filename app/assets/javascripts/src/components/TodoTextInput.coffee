@@ -38,5 +38,6 @@ TodoTextInput = React.createClass(
       value={@state.value}
       autoFocus={true}
     />
+)
 
 module.exports = TodoTextInput

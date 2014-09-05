@@ -1,6 +1,6 @@
-AppDispatcher  = require('../dispatchers/AppDispatcher')
+AppDispatcher  = require('../dispatchers/AppDispatcher.coffee')
 {EventEmitter} = require('events')
-TodoConstants  = require('../constants/TodoConstants')
+TodoConstants  = require('../constants/TodoConstants.coffee')
 merge          = require('react/lib/merge')
 CHANGE_EVENT   = 'change'
 _todos         = {}
@@ -57,7 +57,7 @@ AppDispatcher.register((payload) ->
         updateAll({complete: true})
 
     when TodoConstants.TODO_UNDO_COMPLETE
-      update(action.id, {complete: true})
+      update(action.id, {complete: false})
 
     when TodoConstants.TODO_COMPLETE
       update(action.id, {complete: true})

@@ -36,23 +36,27 @@ TodoItem = React.createClass(
           value={todo.text}
         />
     else
-      input = null
+      input =
+        <div className="view">
+          <input
+            id={todo.id}
+            className="toggle"
+            type="checkbox"
+            checked={todo.complete ? 'checked' : ''}
+            onChange={@_onToggleComplete}
+          />
+          <label
+            htmlFor={todo.id}
+            onDoubleClick={@_onDoubleClick}
+          >
+            {todo.text}
+          </label>
+        </div>
 
     <li
       className={cx({'completed': todo.complete, 'editing': @state.isEditing})}
       key={todo.id}
     >
-      <div className="view">
-        <input
-          className="toggle"
-          type="checkbox"
-          checked={todo.complete}
-          onChange={@_onToggleComplete}
-        />
-        <label onDoubleClick={@_onDoubleClick}>
-          {todo.text}
-        </label>
-      </div>
       {input}
     </li>
 )

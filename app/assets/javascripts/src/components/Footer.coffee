@@ -26,17 +26,21 @@ Footer = React.createClass(
 
     if completed > 0
       clearCompletedButton =
-        <button id="clear-completed" onClick={@_onClearCompletedClick}>
+        <button
+          id="clear-completed"
+          className="tiny radius button"
+          onClick={@_onClearCompletedClick}
+        >
           Clear completed ({completed})
         </button>
     else
       clearCompletedButton = null
 
     <footer id="footer">
-      <span id="todo-count">
-        {itemsLeft} {itemsLeftPhrase}
-      </span>
       {clearCompletedButton}
+      <div id="todo-count">
+        {itemsLeft} {itemsLeftPhrase}
+      </div>
     </footer>
 )
 

@@ -1,5 +1,5 @@
 AppDispatcher = require('../dispatchers/AppDispatcher.coffee')
-TodoConstants = require('../constants/TodoConstants')
+TodoConstants = require('../constants/TodoConstants.coffee')
 
 TodoActions = {
   create: (text) ->

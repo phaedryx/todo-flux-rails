@@ -1,2 +1,2 @@
-window.React = require('react');
-window.Dispatcher = require('./dispatchers/Dispatcher.coffee')
+window.React   = require('react');
+window.TodoApp = require('./components/TodoApp.coffee')

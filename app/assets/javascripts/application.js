@@ -12,4 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require bundle
+
+$(function(){ $(document).foundation(); });
+
+React.renderComponent(TodoApp(), document.body)

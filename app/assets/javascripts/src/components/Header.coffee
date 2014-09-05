@@ -9,10 +9,17 @@ Header = React.createClass(
     TodoActions.create(text) if text.trim()
 
   render: ->
-    <header id="header">
-      <h1>todos</h1>
-      <TodoTextInput id="new-todo" placeholder="What next?" onSave={@_onSave} />
-    </header>
+    <div className="row" id="header">
+      <div className="small-12 columns">
+        <h2>Todo List</h2>
+        <TodoTextInput
+          id="new-todo"
+          placeholder="What next?"
+          className="large-12 columns"
+          onSave={@_onSave}
+        />
+      </div>
+    </div>
 )
 
 module.exports = Header

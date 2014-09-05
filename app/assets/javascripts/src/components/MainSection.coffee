@@ -21,16 +21,18 @@ MainSection = React.createClass(
     for key of allTodos
       todos.push(<TodoItem key={key} todo={allTodos[key]} />)
 
-    <section id="main">
-      <input
-        id="toggle-all"
-        type="checkbox"
-        onChange={@_onToggleCompleteAll}
-        checked={@props.areAllComplete ? 'checked' : ''}
-      />
-      <label htmlFor="toggle-all">Mark all as completed</label>
-      <ul id="todo-list">{todos}</ul>
-    </section>
+    <div className="row" id="main">
+      <div className="small-12 columns">
+        <input
+          id="toggle-all"
+          type="checkbox"
+          onChange={@_onToggleCompleteAll}
+          checked={@props.areAllComplete ? 'checked' : ''}
+        />
+        <label htmlFor="toggle-all">Mark all as completed</label>
+        <ul className="no-bullet" id="todo-list">{todos}</ul>
+      </div>
+    </div>
 )
 
 module.exports = MainSection

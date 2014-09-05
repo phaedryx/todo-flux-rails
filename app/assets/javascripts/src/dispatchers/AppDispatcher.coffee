@@ -1,4 +1,4 @@
-Dispatcher     = require('./Dispatcher')
+Dispatcher     = require('./Dispatcher.coffee')
 copyProperties = require('react/lib/copyProperties')
 
 AppDispatcher = copyProperties(new Dispatcher(),
